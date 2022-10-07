@@ -27,8 +27,8 @@ func main() {
 	var first, second, third int
 	first, second, third = 1, 2, 3
 	name3, age3, address := "Airell", 23, "Jalan Sudirman"
+	_, _, _ = name3, age3, address
 	fmt.Println(student1, student2, student3)
 	fmt.Println(first, second, third)
-	fmt.Println(name3, age3, address)
 
 }
