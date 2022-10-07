@@ -21,7 +21,7 @@ type Employee struct {
 }
 
 func main() {
-	db, err = sql.Open("postgres", "postgres://postgres:****@localhost/dev?sslmode=disable")
+	db, err = sql.Open("postgres", "postgres://postgres:password@localhost/dev?sslmode=disable")
 	if err != nil {
 		panic(err)
 	}
