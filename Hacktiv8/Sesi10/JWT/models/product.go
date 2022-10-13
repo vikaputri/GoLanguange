@@ -1,5 +1,10 @@
 package models
 
+//import (
+//	"gorm.io/gorm"
+//	"github.com/asaskevich/govalidator"
+//)
+
 type Product struct {
 	GormModel
 	Title       string `json:"title" form:"title" valid:"required-Title of your product is required"`
