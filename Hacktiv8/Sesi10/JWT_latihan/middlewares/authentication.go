@@ -1,7 +1,7 @@
 package middlewares
 
 import (
-	"middleware/helpers"
+	"JWT/helpers"
 	"net/http"
 
 	"github.com/gin-gonic/gin"

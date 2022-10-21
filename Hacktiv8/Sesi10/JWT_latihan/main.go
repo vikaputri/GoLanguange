@@ -1,12 +1,12 @@
 package main
 
 import (
-	"middleware/database"
-	"middleware/router"
+	"JWT/database"
+	"JWT/router"
 )
 
 func main() {
 	database.StartDB()
 	r := router.StartApp()
-	r.Run(":8000")
+	r.Run(":8080")
 }
