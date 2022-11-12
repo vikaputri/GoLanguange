@@ -1,138 +1,103 @@
-# Project (Scalable Web Service with Golang - DTS Kominfo) - MyGram
+<h1 align="center"> MyGram</h1>
+<h2 align="center"> Final Project - Scalable Web Service with Golang - DTS Kominfo </h2>
+
+## About
 Aplikasi untuk menyimpan foto dan membuat comment foto orang lain
 
-## Register
-Path: [http://localhost:8080/users/register ](http://localhost:8080//users/register)'
+## Library
+- Gorm
+- Gin
+- jwt-go
+- govalidator
+- crypto
 
-Method: Post
+## Database
+Postgress
 
-Request 
+## Deployment
+Heroku
 
-1. body:
+## Endpoints
+### Register
 ```
-{
-
-    "age":20,
-    
-    "email":"vika@gmail.com",
-    
-    "password":"password",
-    
-    "username":"vika"
-    
-}
+POST https://mygarm.herokuapp.com/users/register
 ```
-
-Response
-
-1. Status 201
-
-2. Data
+### Login
 ```
-{
-
-    "age":20,
-    
-    "email":"vika@gmail.com",
-    
-    "id":1,
-    
-    "username":"vika"
-    
-}
+POST https://mygarm.herokuapp.com/users/login  
 ```
-## Login
-Path: [http://localhost:8080/users/login ](http://localhost:8080//users/login)
-
-Method: Post
-
-Request 
-
-1. body:
+### Get Data User
 ```
-{
-  
-    "email":"vika@gmail.com",
-    
-    "password":"password",
-    
-}
+GET https://mygarm.herokuapp.com/users
+```
+### Update Data User
+```
+PUT https://mygarm.herokuapp.com/users
+```
+### Delete Data User
+```
+DELETE https://mygarm.herokuapp.com/users
 ```
 
-Response
-
-1. Status 200
-
-2. Data
+### Post Photo
 ```
-{
-
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZpa2FAZ21haWwuY29tIiwiaWQiOjV9.LCpNoDe29cp6KUjclllQ0EPNwqqQbol8ibvaYC9GVMQ",
-    
-}
+POST https://mygarm.herokuapp.com/photos
 ```
-
-## Update User
-Path: [http://localhost:8080/users ](http://localhost:8080//users)
-
-Method: Put
-
-Request 
-
-1. headers: Authorization (Bearer token string)
-
-2. body:
+### Get All Photo
 ```
-{
-
-    "age":19,
-    
-    "email":"vikaputri@gmail.com",
-    
-    "password":"passw0rd",
-    
-    "username":"vikaputri"
-    
-}
+GET https://mygarm.herokuapp.com/photos
+```
+### Update Photo
+```
+PUT https://mygarm.herokuapp.com/photos/:photoId
+```
+### Delete Photo
+```
+DELETE https://mygarm.herokuapp.com/:photoId
 ```
 
-Response
-
-1. Status 200
-
-2. Data
+### Post Comment
 ```
-{
-
-    "age":19,
-    
-    "email":"vikaputri@gmail.com",
-    
-    "id":1,
-    
-    "username":"vikaputri"
-    
-    "updatedAt":"2022-10-17T11:37:19.901Z"
-    
-}
+POST https://mygarm.herokuapp.com/comments
 ```
-## Delete User
-Path: [http://localhost:8080/users ](http://localhost:8080//users)
-
-Method: Delete
-
-Request
-
-1. headers: Authorization (Bearer token string)
-
-Response :
-1. Status 200
-
-2. Data:
+### Get All Comment
 ```
-{
-
-    "message": "Your account has been successfully deleted"
-    
-}
+GET https://mygarm.herokuapp.com/comments
 ```
+### Update Comment
+```
+PUT https://mygarm.herokuapp.com/comments/:commentId
+```
+### Delete Comment
+```
+DELETE https://mygarm.herokuapp.com/:commentId
+
+```
+### Post Social Media
+```
+POST https://mygarm.herokuapp.com/socialmedias
+```
+### Get All Social Media
+```
+GET https://mygarm.herokuapp.com/socialmedias
+```
+### Update Social Media
+```
+PUT https://mygarm.herokuapp.com/socialmedias/:socialMediaId
+```
+### Delete Social Media
+```
+DELETE https://mygarm.herokuapp.com/:socialMediaId
+```
+## Install
+- Git clone https://github.com/vikaputri/MyGram.git 
+- Install :
+```
+go get github.com/asaskevich/govalidator
+go get github.com/dgrijalva/jwt-go
+go get github.com/gin-gonic/gin
+go get golang.org/x/crypto/bcrypt
+go get gorm.io/gorm  
+go get gorm.io/driver/postgres
+```
+- Run : go run main.go
